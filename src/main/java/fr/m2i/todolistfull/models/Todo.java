@@ -1,16 +1,18 @@
 package fr.m2i.todolistfull.models;
 
+import java.sql.Date;
+
 public class Todo {
     private int idTodo;
     private String titleTodo;
     private String descriptionTodo;
-    private String dateTodo;
+    private Date dateTodo;
 
     private Urgency urgency;
     private User user;
 
 
-    public Todo(int idTodo, String titleTodo, String descriptionTodo, String dateTodo, Urgency urgency, User user) {
+    public Todo(int idTodo, String titleTodo, String descriptionTodo, Date dateTodo, Urgency urgency, User user) {
         this.idTodo = idTodo;
         this.titleTodo = titleTodo;
         this.descriptionTodo = descriptionTodo;
@@ -46,11 +48,11 @@ public class Todo {
         this.descriptionTodo = descriptionTodo;
     }
 
-    public String getDateTodo() {
+    public Date getDateTodo() {
         return dateTodo;
     }
 
-    public void setDateTodo(String dateTodo) {
+    public void setDateTodo(Date dateTodo) {
         this.dateTodo = dateTodo;
     }
 

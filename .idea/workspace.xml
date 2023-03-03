@@ -9,20 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="model Todolist added">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/UrgencyAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/UserAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/TodoResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/UrgencyResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="models completed, access and ressources to be completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/DatabaseAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/DatabaseAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/models/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/models/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +161,7 @@
       <updated>1677832391863</updated>
       <workItem from="1677832392943" duration="1000" />
       <workItem from="1677832535464" duration="10130000" />
-      <workItem from="1677847271257" duration="11526000" />
+      <workItem from="1677847271257" duration="11928000" />
     </task>
     <task id="LOCAL-00001" summary="sql tables code added">
       <created>1677833727246</created>
@@ -202,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677837858938</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="models completed, access and ressources to be completed">
+      <created>1677859399290</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677859399290</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +209,7 @@
     <MESSAGE value="entities (models) added" />
     <MESSAGE value="database parameters" />
     <MESSAGE value="model Todolist added" />
-    <option name="LAST_COMMIT_MESSAGE" value="model Todolist added" />
+    <MESSAGE value="models completed, access and ressources to be completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="models completed, access and ressources to be completed" />
   </component>
 </project>

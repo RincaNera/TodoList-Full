@@ -11,6 +11,10 @@ public class TodoList {
         todoList = new ArrayList<>();
     }
 
+    public TodoList(List<Todo> todoList) {
+        this.todoList = todoList;
+    }
+
     public List<Todo> getTodoList() {
         return todoList;
     }

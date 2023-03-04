@@ -21,6 +21,8 @@ public class TodoListAccess {
     private final String GETBYURGENCYANDUSER = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, Todo.idUrgency, Todo.idUser, nameUrgency, lastNameUser, firstNameUser " +
             "FROM Todo INNER JOIN Urgency ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser = Todo.idUser WHERE Todo.idUrgency = ? AND Todo.idUser = ? ";
 
+    private final  String DELETEBYUSER  = "DELETE FROM Todo WHERE idUser = ?";
+
     public TodoListAccess(DatabaseAccess db) {
         this.db = db;
     }
@@ -105,6 +107,21 @@ public class TodoListAccess {
             throw new RuntimeException(e);
         }
         return new TodoList(toDoeslist);
+    }
+
+    public boolean deleteTodoByUser(int idUser){
+        try (
+                PreparedStatement statement = db.getConnection().prepareStatement(DELETEBYUSER);
+        ) {
+            statement.setInt(1, idUser);
+            int deletedLinesNumber = statement.executeUpdate();
+            if (deletedLinesNumber > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 }
 

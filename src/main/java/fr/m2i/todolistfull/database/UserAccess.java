@@ -71,22 +71,21 @@ public class UserAccess {
         return false;
     }
 
-    public int userUpdate(int userId, String lastNameUser, String firstNameUser) {
+    public boolean userUpdate(int userId, String lastNameUser, String firstNameUser) {
         try (
                 PreparedStatement statement = db.getConnection().prepareStatement(UPDATE);
         ) {
             statement.setString(1, lastNameUser);
             statement.setString(2, firstNameUser);
             statement.setInt(3, userId);
-            statement.executeUpdate();
-            ResultSet result = statement.getGeneratedKeys();
-            if (result.next()) {
-                return result.getInt(1);
+            int updatedLinesNumber = statement.executeUpdate();
+            if (updatedLinesNumber > 0) {
+                return true;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return 0;
+        return false;
     }
 
     public int getUserByName(String lastNameUser, String firstNameUser){

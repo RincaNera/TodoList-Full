@@ -14,15 +14,12 @@ public class TodoListAccess {
     private final DatabaseAccess db;
 
 
-    private final String GETBYUSER = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, idUrgency, idUser, nameUrgency, lastNameUser, firstNameUser " +
-            "FROM Todo WHERE idUser = ? INNER JOIN Urgency " +
-            "ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser= Todo.idUser";
-    private final String GETBYURGENCY = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, idUrgency, idUser, nameUrgency, lastNameUser, firstNameUser " +
-            "FROM Todo WHERE idUrgency = ? INNER JOIN Urgency " +
-            "ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser= Todo.idUser";
-    private final String GETBYURGENCYANDUSER = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, idUrgency, idUser, nameUrgency, lastNameUser, firstNameUser " +
-            "FROM Todo WHERE idUrgency = ? , idUser = ? INNER JOIN Urgency" +
-            "ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser= Todo.idUser";
+    private final String GETBYUSER = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, Todo.idUrgency, Todo.idUser, nameUrgency, lastNameUser, firstNameUser " +
+            "FROM Todo INNER JOIN Urgency ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser = Todo.idUser WHERE Todo.idUser = ?";
+    private final String GETBYURGENCY = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, Todo.idUrgency, Todo.idUser, nameUrgency, lastNameUser, firstNameUser " +
+            "FROM Todo INNER JOIN Urgency ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser = Todo.idUser WHERE Todo.idUrgency = ? ";
+    private final String GETBYURGENCYANDUSER = "SELECT idTodo, titleTodo, descriptionTodo, dateTodo, Todo.idUrgency, Todo.idUser, nameUrgency, lastNameUser, firstNameUser " +
+            "FROM Todo INNER JOIN Urgency ON Urgency.idUrgency = Todo.idUrgency INNER JOIN User ON User.idUser = Todo.idUser WHERE Todo.idUrgency = ? AND Todo.idUser = ? ";
 
     public TodoListAccess(DatabaseAccess db) {
         this.db = db;
@@ -85,7 +82,7 @@ public class TodoListAccess {
     public TodoList getTodoListByUrgencyAndByUser(int idUrgency, int idUser) {
         ArrayList<Todo> toDoeslist = new ArrayList<>();
         try (
-                PreparedStatement statement = db.getConnection().prepareStatement(GETBYURGENCY);
+                PreparedStatement statement = db.getConnection().prepareStatement(GETBYURGENCYANDUSER);
         ) {
             statement.setInt(1, idUrgency);
             statement.setInt(2, idUser);

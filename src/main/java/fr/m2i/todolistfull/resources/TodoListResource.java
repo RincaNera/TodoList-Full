@@ -4,17 +4,15 @@ import fr.m2i.todolistfull.database.DatabaseAccess;
 import fr.m2i.todolistfull.database.TodoAccess;
 import fr.m2i.todolistfull.database.TodoListAccess;
 import fr.m2i.todolistfull.models.TodoList;
-import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 
+@Path("todoList")
 public class TodoListResource {
     @GET
     @Path("todoListByUser")
 
-    public Response getTodoListByUser(@FormParam("userId") int idUser){
+    public Response getTodoListByUser(@QueryParam("userId") int idUser){
         TodoListAccess todoListAccess = new TodoListAccess(DatabaseAccess.getInstance());
         TodoList todoList = todoListAccess.getTodoListByUser(idUser);
         if (todoList.getTodoList().size() != 0) {
@@ -26,7 +24,7 @@ public class TodoListResource {
     }
     @GET
     @Path("todoListByUrgency")
-    public Response getTodoListByUrgency(@FormParam("urgencyId") int idUrgency){
+    public Response getTodoListByUrgency(@QueryParam("urgencyId") int idUrgency){
         TodoListAccess todoListAccess = new TodoListAccess(DatabaseAccess.getInstance());
         TodoList todoList = todoListAccess.getTodoListByUser(idUrgency);
         if (todoList.getTodoList().size() != 0) {
@@ -38,7 +36,7 @@ public class TodoListResource {
     }
     @GET
     @Path("todoListByUrgencyAndByUser")
-    public Response getTodoListByUrgencyAndByUser(@FormParam("urgencyId") int idUrgency, @FormParam("userId") int idUser){
+    public Response getTodoListByUrgencyAndByUser(@QueryParam("urgencyId") int idUrgency, @QueryParam("userId") int idUser){
         TodoListAccess todoListAccess = new TodoListAccess(DatabaseAccess.getInstance());
         TodoList todoListByUrgencyAndUser = todoListAccess.getTodoListByUrgencyAndByUser(idUrgency, idUser);
 

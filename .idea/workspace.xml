@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="TodoListResource&#10; completed">
+    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="Correction de code SQl et test sur POSTMAN todoByUser et todoByUrgency ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/TodoListResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/TodoListResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/UrgencyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/UrgencyResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +166,7 @@
       <workItem from="1677921835563" duration="417000" />
       <workItem from="1677922278309" duration="1114000" />
       <workItem from="1677923423421" duration="1382000" />
-      <workItem from="1677924842205" duration="2231000" />
+      <workItem from="1677924842205" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="sql tables code added">
       <created>1677833727246</created>
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677924535853</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correction de code SQl et test sur POSTMAN todoByUser et todoByUrgency ok">
+      <created>1677927411145</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677927411145</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +246,7 @@
     <MESSAGE value="mysql code todolist access added" />
     <MESSAGE value="TodoListAccess completed" />
     <MESSAGE value="TodoListResource&#10; completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="TodoListResource&#10; completed" />
+    <MESSAGE value="Correction de code SQl et test sur POSTMAN todoByUser et todoByUrgency ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de code SQl et test sur POSTMAN todoByUser et todoByUrgency ok" />
   </component>
 </project>

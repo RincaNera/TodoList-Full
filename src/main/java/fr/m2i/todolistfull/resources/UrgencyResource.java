@@ -1,7 +1,9 @@
 package fr.m2i.todolistfull.resources;
 
 import fr.m2i.todolistfull.database.DatabaseAccess;
+import fr.m2i.todolistfull.database.TodoListAccess;
 import fr.m2i.todolistfull.database.UrgencyAccess;
+import fr.m2i.todolistfull.models.TodoList;
 import fr.m2i.todolistfull.models.Urgency;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
@@ -37,6 +39,11 @@ public class UrgencyResource {
     @DELETE
     @Path("deleteUrgency")
     public Response deleteUrgency(@QueryParam("idUrgency") int idUrgency) {
+        TodoListAccess todoListAccess = new TodoListAccess(DatabaseAccess.getInstance());
+        TodoList todoListToDelete = todoListAccess.getTodoListByUrgency(idUrgency);
+        if (todoListToDelete.getTodoList().size() > 0){
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Il existe encore des todo pour cette urgence").build();
+        }
         UrgencyAccess urgency = new UrgencyAccess(DatabaseAccess.getInstance());
         boolean urgencySuccess = urgency.deleteUrgencyById(idUrgency);
         if (urgencySuccess){

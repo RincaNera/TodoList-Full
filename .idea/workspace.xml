@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="mysql code todolist access added">
+    <list default="true" id="8f258572-6190-4ec6-9070-aa94e02fb55a" name="Changes" comment="TodoListAccess completed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/resources/TodoListResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/database/TodoListAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/models/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/m2i/todolistfull/models/TodoList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +165,7 @@
       <workItem from="1677847271257" duration="12862000" />
       <workItem from="1677921835563" duration="417000" />
       <workItem from="1677922278309" duration="1114000" />
-      <workItem from="1677923423421" duration="192000" />
+      <workItem from="1677923423421" duration="1070000" />
     </task>
     <task id="LOCAL-00001" summary="sql tables code added">
       <created>1677833727246</created>
@@ -210,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677860085570</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="TodoListAccess completed">
+      <created>1677923653540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677923653541</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +229,7 @@
     <MESSAGE value="model Todolist added" />
     <MESSAGE value="models completed, access and ressources to be completed" />
     <MESSAGE value="mysql code todolist access added" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysql code todolist access added" />
+    <MESSAGE value="TodoListAccess completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="TodoListAccess completed" />
   </component>
 </project>

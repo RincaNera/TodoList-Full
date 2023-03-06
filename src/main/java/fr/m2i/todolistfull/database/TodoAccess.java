@@ -98,7 +98,7 @@ public class TodoAccess {
     }
 
 
-    public int todoUpdate(int todoId, String titleTodo, String descriptionTodo, Date dateTodo, int idUrgency, int idUser) {
+    public boolean todoUpdate(int todoId, String titleTodo, String descriptionTodo, Date dateTodo, int idUrgency, int idUser) {
         try(
                 PreparedStatement statement = db.getConnection().prepareStatement(UPDATE);
         ) {
@@ -109,14 +109,14 @@ public class TodoAccess {
             statement.setInt(4, idUrgency);
             statement.setInt(5, idUser);
             statement.executeUpdate();
-            ResultSet result = statement.getGeneratedKeys();
-            if (result.next()) {
-                return result.getInt(1);
+            int updatedLinesNumber = statement.executeUpdate();
+            if (updatedLinesNumber > 0) {
+                return true;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return 0;
+        return false;
     }
 
 }

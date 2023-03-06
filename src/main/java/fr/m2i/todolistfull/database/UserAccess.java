@@ -14,7 +14,7 @@ public class UserAccess {
     private final String DELETE = "DELETE FROM User WHERE idUser= ?";
     private final String UPDATE = "UPDATE User SET lastNameUser = ? , firstNameUser = ? WHERE idUser = ?";
 
-    private final String GETBYNAME = "SELECT idUser FROM User WHERE firstNameUser =?, lastNameUser = ? ";
+    private final String GETBYNAME = "SELECT idUser FROM User WHERE firstNameUser = ? AND lastNameUser = ? ";
 
 
     public UserAccess(DatabaseAccess db) {
@@ -90,10 +90,10 @@ public class UserAccess {
 
     public int getUserByName(String lastNameUser, String firstNameUser){
         try (
-                PreparedStatement statement = db.getConnection().prepareStatement(GETBYID);
+                PreparedStatement statement = db.getConnection().prepareStatement(GETBYNAME);
         ) {
-            statement.setString(1, lastNameUser);
-            statement.setString(2, firstNameUser);
+            statement.setString(2, lastNameUser);
+            statement.setString(1, firstNameUser);
 
             ResultSet result = statement.executeQuery();
             if (result.next()) {

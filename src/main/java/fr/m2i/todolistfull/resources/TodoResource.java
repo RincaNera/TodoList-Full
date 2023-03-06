@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.Response;
 import java.sql.Date;
 import java.util.ArrayList;
 
+@Path("todo")
 public class TodoResource {
 
     @POST
@@ -58,8 +59,8 @@ public class TodoResource {
                                    @FormParam("urgencyId") int idUrgency,
                                    @FormParam("userId") int idUser) {
         TodoAccess todoAccess = new TodoAccess(DatabaseAccess.getInstance());
-        int todo = todoAccess.todoUpdate(idTodo, titleTodo, descriptionTodo, dateTodo, idUrgency, idUser);
-        if (todo != 0) {
+        boolean todo = todoAccess.todoUpdate(idTodo, titleTodo, descriptionTodo, dateTodo, idUrgency, idUser);
+        if (todo) {
             return Response.status(Response.Status.OK).entity(todo).build();
         } else {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Le todo n'a pas été modifié ! ").build();
@@ -69,7 +70,7 @@ public class TodoResource {
 
     @DELETE
     @Path("deleteTodoWithId")
-    public Response deleteTodoById(@FormParam("id") int idTodo)
+    public Response deleteTodoById(@QueryParam("id") int idTodo)
     {
         TodoAccess todoAccess = new TodoAccess(DatabaseAccess.getInstance());
         boolean todo = todoAccess.deleteTodoById(idTodo);

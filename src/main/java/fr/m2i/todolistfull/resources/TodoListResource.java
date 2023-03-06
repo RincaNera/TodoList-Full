@@ -26,7 +26,7 @@ public class TodoListResource {
     @Path("todoListByUrgency")
     public Response getTodoListByUrgency(@QueryParam("urgencyId") int idUrgency){
         TodoListAccess todoListAccess = new TodoListAccess(DatabaseAccess.getInstance());
-        TodoList todoList = todoListAccess.getTodoListByUser(idUrgency);
+        TodoList todoList = todoListAccess.getTodoListByUrgency(idUrgency);
         if (todoList.getTodoList().size() != 0) {
             return Response.status(Response.Status.OK).entity(todoList).build();
         } else {
